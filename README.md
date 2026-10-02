@@ -1,119 +1,62 @@
-<div align="center">
+# Streamline Landing Site
 
-# 🚀 Streamline — Enterprise Landing Page
+A modern, high-performance Next.js 15 landing page for enterprise software solutions — featuring AI analytics, cloud-native architecture, and cybersecurity offerings with fluid animations, responsive design, and SEO optimization.
 
-**A modern, high-performance marketing landing page for enterprise software solutions.**
-Built with Next.js 15, React 19, TypeScript, Tailwind CSS & shadcn/ui — featuring fluid
-animations, a responsive design, SEO optimization, and fully static export so it deploys
-anywhere (Cloudflare Pages, GitHub Pages, Netlify).
+## Features
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.2.8-000000?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
-[![shadcn/ui](https://img.shields.io/badge/shadcn/ui-latest-000000?style=flat-square)](https://ui.shadcn.com/)
+- **Hero section** with animated headline, CTA, and product visuals
+- **Feature showcase** — AI analytics, cloud-native architecture, cybersecurity cards
+- **Pricing, testimonials, FAQ, and CTA sections**
+- **Fluid animations** powered by Framer Motion (scroll reveals, parallax, micro-interactions)
+- **Dark/light theming** via next-themes
+- **SEO optimized** — metadata, OpenGraph tags, sitemap-friendly structure
+- **Fully responsive** mobile-first design
+- **shadcn/ui component library** — accordion, dialog, dropdowns, carousel, forms, charts
 
-</div>
+## Tech Stack
 
----
-
-## 📖 Table of Contents
-
-- [📋 Project Overview](#-project-overview)
-- [✨ Features](#-features)
-- [🛠️ Tech Stack](#-tech-stack)
-- [🚀 Quick Start](#-quick-start)
-- [📁 Project Structure](#-project-structure)
-- [⚙️ Environment Variables](#️-environment-variables)
-- [📦 Deploy](#-deploy)
-- [👤 Author](#-author)
-- [📄 License](#-license)
-
-## 📋 Project Overview
-
-Streamline is a conversion-focused landing page for an enterprise software company.
-It showcases AI analytics, cloud-native architecture, and cybersecurity offerings
-across dedicated pages (company, services, solutions, pricing, resources) with
-polished animations and an SEO-first setup. A documented `SEO_STRATEGY.md` describes
-the organic-search plan for this site.
-
-## ✨ Features
-
-- Multi-page marketing site — home, company, services, solutions, pricing, resources
-- Fluid scroll-based and entrance animations (Framer Motion)
-- Fully responsive, mobile-first layouts
-- SEO-optimized metadata, Open Graph tags, and a documented SEO strategy
-- shadcn/ui component library (Radix primitives) for accessible UI
-- Fully static export (`output: 'export'`) — zero server cost to host
-
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js 15.2.8 (static export), React 19, TypeScript
-- **Styling:** Tailwind CSS 3.4, shadcn/ui, Radix UI primitives
+- **Framework:** Next.js 15 (App Router, static export)
+- **Language:** TypeScript
+- **UI:** React 19, Tailwind CSS, shadcn/ui (Radix primitives)
 - **Animation:** Framer Motion
-- **Fonts:** Geist (next/font)
-- **Analytics:** @vercel/analytics
+- **Charts:** Recharts
+- **Forms:** React Hook Form + Zod
+- **Analytics:** Vercel Analytics
 
-## 🚀 Quick Start
-
-Prerequisites: Node.js 18+ and npm.
+## Quick Start
 
 ```bash
-# 1. Install dependencies
 npm install --legacy-peer-deps
-
-# 2. Start the dev server
 npm run dev
-# open http://localhost:3000
-
-# 3. Production static build (outputs to dist/)
-npm run build
 ```
 
-The production site is fully static — serve the `dist/` folder from any static host.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-.
-├── app/                 # Next.js App Router pages
-│   ├── company/         # Company page
-│   ├── pricing/         # Pricing page
-│   ├── resources/       # Resources page
-│   ├── services/        # Services page
-│   ├── solutions/       # Solutions page
-│   ├── layout.tsx       # Root layout + metadata
-│   └── page.tsx         # Home page
-├── components/          # Reusable UI components (shadcn/ui + custom)
-├── lib/                 # Utilities
-├── public/              # Static assets
-├── styles/              # Global styles
-├── next.config.mjs      # Static-export config (output: 'export', distDir: 'dist')
-├── SEO_STRATEGY.md      # SEO plan for this site
-└── tailwind.config.js   # Tailwind theme
+app/            # Next.js App Router pages, layout, metadata
+components/     # Landing sections + shadcn/ui components
+lib/            # Utilities (cn helper)
+styles/         # Global styles
+public/         # Static assets
 ```
 
-## ⚙️ Environment Variables
+## Build & Deploy
 
-No environment variables are required. The site is fully static and client-side.
-Vercel Analytics (`@vercel/analytics`) is included but works without configuration.
+The site is a fully static export:
 
-## 📦 Deploy
+```bash
+npm run build     # outputs to dist/
+```
 
-Because the site uses `output: 'export'`, the build (`npm run build`) produces a
-`dist/` directory you can deploy to any static host:
+Deploy the `dist/` folder to any static host (Cloudflare Pages, GitHub Pages, Netlify, Vercel).
 
-- **Cloudflare Pages:** `cloudflare pages_deploy streamline-landing-site dist/`
-- **Netlify:** drop `dist/` into a new site
-- **GitHub Pages:** publish `dist/` contents
+## Notes
 
-No server, no functions, no database.
+- `output: "export"` with `images.unoptimized` in `next.config.mjs` enables pure static hosting.
+- TypeScript and ESLint errors are ignored during builds (`ignoreBuildErrors: true`).
 
-## 👤 Author
+## Author
 
-Built by [Girish Lade](https://ladestack.in) — founder of
-[LadeStack](https://ladestack.in), building free, open, and local-first software.
-
-## 📄 License
-
-MIT — free to use, modify, and share.
+Built by Girish Lade — [ladestack.in](https://ladestack.in)
