@@ -2,8 +2,6 @@
 const nextConfig = {
   output: 'export',
   distDir: 'dist',
-  basePath: '/streamline-landing-pagee',
-  assetPrefix: '/streamline-landing-pagee',
   eslint: {
     ignoreDuringBuilds: true,
   },
